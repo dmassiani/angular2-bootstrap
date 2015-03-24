@@ -1,0 +1,16 @@
+<style>
+	@import "name-change.css";
+</style>
+<h1>Hello {{ name }}</h1>
+<input #newname type="text">
+<button (click)="changeName(newname.value)"
+	[disabled]="newname.value == 'David change this name'"> Change Name
+</button>
+<button class="btn" *if="!isLoaded" (click)="load()">Load</button>
+ <button class="btn" *if="isLoaded"  (click)="searchAll()">Search all month</button>
+<!--
+	Note : si je veux inclure un template ici : je faius :
+	<todo-widget></todo-widget>
+	il faut aussi penser à ajouter dans les directives du template dans app.es6 le nom du composant todo-widget
+	exemple : https://github.com/djsmith42/angular2_calendar/blob/master/app/components/calendar/calendar.js
+-->
